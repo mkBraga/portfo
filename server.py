@@ -37,4 +37,4 @@ def submit_form():
         except:
             return 'did not save to database'
     else:
-        return 'Algo nao está bem'
+        return 'Error'
