@@ -18,7 +18,7 @@ def html_Page(page_name):
 
 def write_to_cvs(data):
     #Atenção ao caminho
-    with open('./venv/database.csv', mode='a', newline='\n') as database2:
+    with open('database.csv', mode='a', newline='\n') as database2:
         email = data["email"]
         subject = data["subject"]
         message = data["message"]
