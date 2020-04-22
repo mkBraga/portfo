@@ -15,17 +15,7 @@ def my_home():
 def html_Page(page_name):
     return render_template(page_name)
 
-def write_to_file(data):
-    #Atenção ao caminho
-    with open('database.txt', mode='a') as database:
-        email = data["email"]
-        subject = data["subject"]
-        message = data["message"]
-        file = database.write(f'\n{email},{subject},{message}')
 
-#database para ficheiros excell
-#delimiter = separado por , (as virgulas são o que criam diferentes colunas)
-#
 def write_to_cvs(data):
     #Atenção ao caminho
     with open('./venv/database.csv', mode='a', newline='\n') as database2:
@@ -41,8 +31,6 @@ def submit_form():
         try:
             #tem um metodo que passa tudo o que tiver para dicionario .to_dict()
             data = request.form.to_dict()
-        
-            #write_to_file(data)
             write_to_cvs(data)
             print(data)
             return redirect('/thankyou.html')
